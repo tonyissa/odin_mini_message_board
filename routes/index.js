@@ -22,4 +22,9 @@ router.get('/new', function(req, res, next) {
   res.render('form', { title: "Mini Messageboard" })
 });
 
+router.post('/new', function(req, res, next) {
+  messages.push({text: req.body.text, user: req.body.author, added: new Date().toLocaleDateString()})
+  res.redirect('/');
+});
+
 module.exports = router;

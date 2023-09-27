@@ -9,8 +9,9 @@
 
     </header>
     <form method="POST" action="/new">
-        <input type="text" maxlength="20" placeholder="Name" required />
-        <p><textarea placeholder="Max length: 150 characters" maxlength="150" required></textarea></p>
+        <input type="text" maxlength="20" placeholder="Name" name="author" required />
+        <textarea placeholder="Max length: 150 characters" name="text"
+        maxlength="150" required></textarea>
         <button type="submit">Submit?</button>
     </form>
   </body>
