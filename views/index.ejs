@@ -7,5 +7,14 @@
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+    <ul>
+      <% messages.map(message => { %>
+        <li>
+          <strong><%= message.user %></strong>
+          <%= message.text %>
+          date added: <%= message.added %>
+        </li>
+      <% }); %>
+    </ul>
   </body>
 </html>
