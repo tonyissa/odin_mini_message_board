@@ -8,12 +8,14 @@ var indexRouter = require('./routes/index');
 
 var app = express();
 
+// mongoose setup
+
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
 main().catch(err => console.log(err));
 
 async function main() {
-  console.log(process.env.MONGODB_URL)
+  await mongoose.connect(process.env.MONGODB_URL)
 }
 
 // view engine setup
