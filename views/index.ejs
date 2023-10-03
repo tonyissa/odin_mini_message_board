@@ -13,7 +13,7 @@
         <li>
           <strong><%= message.user %></strong>
           <%= message.text %>
-          <i>date added:</i> <%= message.date %>
+          <i>date added:</i> <%= new Date(message.date).toLocaleDateString() %>
         </li>
       <% }); %>
     </ul>
