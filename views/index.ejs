@@ -7,12 +7,13 @@
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+    <a href="/new">New post?</a>
     <ul>
       <% messages.map(message => { %>
         <li>
           <strong><%= message.user %></strong>
           <%= message.text %>
-          date added: <%= message.added %>
+          <i>date added:</i> <%= message.date %>
         </li>
       <% }); %>
     </ul>

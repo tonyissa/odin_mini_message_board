@@ -1,20 +1,11 @@
+const PostModel = require('../models/post.js')
 var express = require('express');
 var router = express.Router();
-const messages = [
-  {
-    text: "Hi there!",
-    user: "Armando",
-    added: new Date().toLocaleDateString()
-  },
-  {
-    text: "Hi World!",
-    user: "Charles",
-    added: new Date().toLocaleDateString()
-  }
-];
+
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', async function(req, res, next) {
+  const messages = await PostModel.find()
   res.render('index', { title: 'Mini Messageboard', messages: messages });
 });
 
